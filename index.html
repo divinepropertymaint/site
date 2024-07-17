@@ -59,7 +59,6 @@
             text-align: center;
             padding: 10px 0;
             font-size: 0.9em;
-            position: relative;
         }
         .contact-btn {
             position: fixed;
@@ -154,24 +153,6 @@
                 form.style.display = 'none';
             }
         }
-
-        function adjustContactButtonPosition() {
-            var footer = document.querySelector('footer');
-            var contactBtn = document.querySelector('.contact-btn');
-            var footerRect = footer.getBoundingClientRect();
-            var contactBtnRect = contactBtn.getBoundingClientRect();
-
-            if (footerRect.top < window.innerHeight) {
-                contactBtn.style.position = 'absolute';
-                contactBtn.style.bottom = `${window.innerHeight - footerRect.top + 20}px`;
-            } else {
-                contactBtn.style.position = 'fixed';
-                contactBtn.style.bottom = '20px';
-            }
-        }
-
-        window.addEventListener('scroll', adjustContactButtonPosition);
-        window.addEventListener('resize', adjustContactButtonPosition);
 
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
