@@ -32,7 +32,11 @@
         }
         h1 {
             font-size: 2.5em;
-            margin: 0;
+            margin: 10px 0 0 0; /* Added margin to create space above the heading */
+        }
+        .italic {
+            font-style: italic;
+            margin-top: 10px; /* Added margin to create space below the heading */
         }
         .contact-info {
             text-align: center;
@@ -162,10 +166,12 @@
         <header>
             <img src="header_logo.PNG" alt="Divine Property Maintenance Logo">
             <h1>Divine Property Maintenance</h1>
+            <p class="italic">Licensed and Insured</p>
             <form class="search-bar" onsubmit="handleFormSubmit(event)">
-                <input id="autocomplete" type="text" placeholder="Enter your address" required>
+                <input id="autocomplete" type="text" placeholder="Enter your property address here" required>
                 <button type="submit">Submit</button>
             </form>
+            <p class="italic" style="margin-top: 20px; margin-bottom: 20px;">No job too big or too small for Divine Property Maintenance.</p>
         </header>
         <div class="contact-info">
             <p>Call us: <a href="tel:+17726785016">(772) 678-5016</a></p>
