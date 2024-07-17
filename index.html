@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Property Maintenance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #374550;
+            color: #bebebe;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .description {
+            font-size: 1.2em;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .google-business, .social-media {
+            text-align: center;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+        }
+        /* Contact Form Pop Out */
+        .contact-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #bebebe;
+            color: #374550;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .contact-form-popup {
+            display: none;
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background-color: #374550;
+            color: #bebebe;
+            padding: 20px;
+            border: 1px solid #bebebe;
+            border-radius: 5px;
+            width: 300px;
+        }
+        .contact-form-popup input,
+        .contact-form-popup textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #bebebe;
+            border-radius: 5px;
+            background-color: #374550;
+            color: #bebebe;
+        }
+        .contact-form-popup button {
+            background-color: #bebebe;
+            color: #374550;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="icon_image_path" alt="Divine Property Maintenance Logo">
+            <h1>Divine Property Maintenance</h1>
+        </header>
+        <div class="contact-info">
+            <p>Call us: (772) 678-5016</p>
+        </div>
+        <div class="description">
+            <p>Divine Property Maintenance keeps your Palm Beach, Martin, and St. Lucie county property sparkling clean and well-maintained. They offer pressure cleaning services for both residential and commercial clients.</p>
+        </div>
+        <div class="google-business">
+            <p>Check our Google Business site: <a href="https://g.co/kgs/cBXNQw" target="_blank" style="color: #bebebe;">Divine Property Maintenance</a></p>
+        </div>
+        <div class="social-media">
+            <p>Follow us on Instagram: <a href="https://www.instagram.com/divinepropertymaintenance/" target="_blank" style="color: #bebebe;">@divinepropertymaintenance</a></p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Divine Property Maintenance. All rights reserved.</p>
+    </footer>
+    <button class="contact-btn" onclick="toggleContactForm()">Contact Us</button>
+    <div class="contact-form-popup" id="contactForm">
+        <form>
+            <h2>Contact Us</h2>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script>
+        function toggleContactForm() {
+            var form = document.getElementById('contactForm');
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
