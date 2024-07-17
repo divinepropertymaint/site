@@ -32,11 +32,7 @@
         }
         h1 {
             font-size: 2.5em;
-            margin: 10px 0 0 0; /* Added margin to create space above the heading */
-        }
-        .italic {
-            font-style: italic;
-            margin-top: 10px; /* Added margin to create space below the heading */
+            margin: 0;
         }
         .contact-info {
             text-align: center;
@@ -141,12 +137,48 @@
         function initialize() {
             var input = document.getElementById('autocomplete');
             var autocomplete = new google.maps.places.Autocomplete(input);
+
+            autocomplete.addListener('place_changed', function() {
+                var place = autocomplete.getPlace();
+                var address = '';
+                var city = '';
+                var state = '';
+                var zip = '';
+
+                for (var i = 0; i < place.address_components.length; i++) {
+                    var component = place.address_components[i];
+
+                    if (component.types.includes('street_number')) {
+                        address += component.long_name + ' ';
+                    }
+
+                    if (component.types.includes('route')) {
+                        address += component.long_name;
+                    }
+
+                    if (component.types.includes('locality')) {
+                        city = component.long_name;
+                    }
+
+                    if (component.types.includes('administrative_area_level_1')) {
+                        state = component.short_name;
+                    }
+
+                    if (component.types.includes('postal_code')) {
+                        zip = component.long_name;
+                    }
+                }
+
+                sessionStorage.setItem('address', address);
+                sessionStorage.setItem('city', city);
+                sessionStorage.setItem('state', state);
+                sessionStorage.setItem('zip', zip);
+            });
         }
 
         function handleFormSubmit(event) {
             event.preventDefault();
-            var address = document.getElementById('autocomplete').value;
-            window.location.href = 'form-page.html?address=' + encodeURIComponent(address);
+            window.location.href = 'form-page.html';
         }
 
         function toggleContactForm() {
@@ -165,13 +197,17 @@
     <div class="container">
         <header>
             <img src="header_logo.PNG" alt="Divine Property Maintenance Logo">
-            <h1>Divine Property Maintenance</h1>
-            <p class="italic">Licensed and Insured</p>
+            <div style="height: 20px;"></div> <!-- Spacer between logo and h1 -->
+            <p><em>Licensed and Insured</em></p>
+            <h1>GET YOUR FREE QUOTE TODAY</h1>
+            <h2> Call us <a href="tel:+17726785016">(772) 678-5016</a> or enter your address below.</h2>
+            
             <form class="search-bar" onsubmit="handleFormSubmit(event)">
-                <input id="autocomplete" type="text" placeholder="Enter your address" required>
+                <input id="autocomplete" type="text" placeholder="Enter your property address here" required>
                 <button type="submit">Submit</button>
             </form>
-            <p class="italic" style="margin-top: 20px; margin-bottom: 20px;">No job too big or too small for Divine Property Maintenance.</p>
+            <div style="height: 20px;"></div> <!-- Spacer between search bar and text -->
+            <p>No job too big or too small for Divine Property Maintenance.</p>
         </header>
         <div class="contact-info">
             <p>Call us: <a href="tel:+17726785016">(772) 678-5016</a></p>

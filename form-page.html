@@ -78,11 +78,22 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const address = urlParams.get('address');
+            const address = sessionStorage.getItem('address');
+            const city = sessionStorage.getItem('city');
+            const state = sessionStorage.getItem('state');
+            const zip = sessionStorage.getItem('zip');
 
             if (address) {
                 document.getElementById('address').value = address;
+            }
+            if (city) {
+                document.getElementById('city').value = city;
+            }
+            if (state) {
+                document.getElementById('state').value = state;
+            }
+            if (zip) {
+                document.getElementById('zip').value = zip;
             }
         });
     </script>
