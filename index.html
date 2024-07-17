@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VW4PNSEVXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VW4PNSEVXX');
-</script>
     <title>Divine Property Maintenance</title>
     <meta name="description" content="Divine Property Maintenance offers premier property maintenance services in Palm Beach, Martin, and St. Lucie counties."/>
     <meta charset="utf-8" />
@@ -119,12 +110,31 @@
             border-color: red;
         }
     </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiVsUIHoEx_FX4ZOwWP8_O1cjku1qJKgw&libraries=places"></script>
+    <script>
+        function initialize() {
+            var input = document.getElementById('autocomplete');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            var address = document.getElementById('autocomplete').value;
+            window.location.href = 'form-page.html?address=' + encodeURIComponent(address);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 <body>
     <div class="container">
         <header>
             <img src="header_logo.PNG" alt="Divine Property Maintenance Logo">
             <h1>Divine Property Maintenance</h1>
+            <form onsubmit="handleFormSubmit(event)">
+                <input id="autocomplete" type="text" placeholder="Enter your property address here" required>
+                <button type="submit">Get Analysis</button>
+            </form>
         </header>
         <div class="contact-info">
             <p>Call us: <a href="tel:+17726785016">(772) 678-5016</a></p>

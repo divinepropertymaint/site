@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divine Property Maintenance</title>
-    <meta name="description" content="Divine Property Maintenance offers premier property maintenance services in Palm Beach, Martin, and St. Lucie counties."/>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:image" content="share_logo.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/26791ad616.css">
     <style>
         body {
-            font-family: 'Catamaran', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #ffffff;
             color: #374550;
             margin: 0;
@@ -60,6 +55,7 @@
             padding: 10px 0;
             font-size: 0.9em;
         }
+        /* Contact Form Pop Out */
         .contact-btn {
             position: fixed;
             bottom: 20px;
@@ -102,53 +98,32 @@
         }
         .contact-form-popup input:invalid,
         .contact-form-popup textarea:invalid {
-            border-color: red;
+            border-color: red.
         }
         .contact-form-popup input:focus:invalid,
         .contact-form-popup textarea:focus:invalid {
             outline: none;
-            border-color: red;
+            border-color: red.
         }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiVsUIHoEx_FX4ZOwWP8_O1cjku1qJKgw&libraries=places"></script>
-    <script>
-        function initialize() {
-            var input = document.getElementById('autocomplete');
-            var autocomplete = new google.maps.places.Autocomplete(input);
-        }
-
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            var address = document.getElementById('autocomplete').value;
-            window.location.href = 'form-page.html?address=' + encodeURIComponent(address);
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
 </head>
 <body>
     <div class="container">
         <header>
             <img src="header_logo.PNG" alt="Divine Property Maintenance Logo">
             <h1>Divine Property Maintenance</h1>
-            <form onsubmit="handleFormSubmit(event)">
-                <input id="autocomplete" type="text" placeholder="Enter your property address here" required>
-                <button type="submit">Get Analysis</button>
-            </form>
         </header>
         <div class="contact-info">
-            <p>Call us: <a href="tel:+17726785016">(772) 678-5016</a></p>
+            <p>Call us: (772) 678-5016</p>
         </div>
         <div class="description">
-            <p>Divine Property Maintenance keeps your Palm Beach, Martin, and St. Lucie county property sparkling clean and well-maintained. We offer pressure cleaning services for both residential and commercial clients.</p>
+            <p>Divine Property Maintenance keeps your Palm Beach, Martin, and St. Lucie county property sparkling clean and well-maintained. They offer pressure cleaning services for both residential and commercial clients.</p>
+        </div>
+        <div class="google-business">
+            <p>Check our Google Business site: <a href="https://g.co/kgs/cBXNQw" target="_blank" style="color: #374550;">Divine Property Maintenance</a></p>
         </div>
         <div class="social-media">
-            <p>Follow us on social media:</p>
-            <ul class="list-inline">
-                <li><a href="https://www.instagram.com/divinepropertymaintenance/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://www.facebook.com/share/cEKArAL4b3SsCj75/?mibextid=LQQJ4d" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://g.co/kgs/vGFQkhq" target="_blank"><i class="fa fa-google"></i></a></li>
-            </ul>
+            <p>Follow us on Instagram: <a href="https://www.instagram.com/divinepropertymaintenance/" target="_blank" style="color: #374550;"><img src="instagram_icon.png" alt="Instagram Icon">@divinepropertymaintenance</a></p>
         </div>
     </div>
     <footer>
@@ -156,7 +131,7 @@
     </footer>
     <button class="contact-btn" onclick="toggleContactForm()">Contact Us</button>
     <div class="contact-form-popup" id="contactForm">
-        <form id="contactFormElement" action="https://formspree.io/f/xeojonyj" method="POST">
+        <form id="contactFormElement" action="https://formsubmit.co/your-email@gmail.com" method="POST">
             <h2>Contact Us</h2>
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
@@ -186,7 +161,6 @@
                 if (response.ok) {
                     alert("Thank you for contacting Divine Property Maintenance. We will get back to you shortly.");
                     event.target.reset();
-                    toggleContactForm(); // Close the form popup
                 } else {
                     alert("There was an error sending your message. Please try again later.");
                 }
