@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Property Management Services</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Catamaran', sans-serif;
+            background-color: #ffffff;
+            color: #374550;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .form-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .form-container form input,
+        .form-container form textarea,
+        .form-container form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #374550;
+            border-radius: 5px;
+        }
+        .form-container form button {
+            background-color: #374550;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const address = getQueryParameter('address');
+            if (address) {
+                document.getElementById('address').value = address;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="header_logo.PNG" alt="Divine Property Maintenance Logo">
+            <h1>Property Management Services</h1>
+        </header>
+        <div class="form-container">
+            <form action="https://formspree.io/f/xeojonyj" method="POST">
+                <h2>Property Details</h2>
+                <input type="text" id="address" name="address" placeholder="Property Address" required>
+                <input type="text" name="beds" placeholder="Number of Beds" required>
+                <input type="text" name="baths" placeholder="Number of Baths" required>
+                <input type="text" name="property_type" placeholder="Property Type" required>
+                <input type="text" name="square_feet" placeholder="Square Feet" required>
+                
+                <h2>Contact Information</h2>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <textarea name="comments" placeholder="Comments" required></textarea>
+                
+                <h2>Mailing Address</h2>
+                <input type="text" name="mailing_address" placeholder="Address" required>
+                <input type="text" name="unit_suite_apt" placeholder="Unit/Suite/Apt #" required>
+                <input type="text" name="city" placeholder="City" required>
+                <input type="text" name="state" placeholder="State" required>
+                <input type="text" name="zip_code" placeholder="Zip Code" required>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

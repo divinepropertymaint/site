@@ -59,6 +59,7 @@
             text-align: center;
             padding: 10px 0;
             font-size: 0.9em;
+            position: relative;
         }
         .contact-btn {
             position: fixed;
@@ -70,6 +71,7 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            z-index: 1000;
         }
         .contact-form-popup {
             display: none;
@@ -109,6 +111,27 @@
             outline: none;
             border-color: red;
         }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        #autocomplete {
+            width: 70%;
+            padding: 10px;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #374550;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiVsUIHoEx_FX4ZOwWP8_O1cjku1qJKgw&libraries=places"></script>
     <script>
@@ -123,6 +146,33 @@
             window.location.href = 'form-page.html?address=' + encodeURIComponent(address);
         }
 
+        function toggleContactForm() {
+            var form = document.getElementById('contactForm');
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        }
+
+        function adjustContactButtonPosition() {
+            var footer = document.querySelector('footer');
+            var contactBtn = document.querySelector('.contact-btn');
+            var footerRect = footer.getBoundingClientRect();
+            var contactBtnRect = contactBtn.getBoundingClientRect();
+
+            if (footerRect.top < window.innerHeight) {
+                contactBtn.style.position = 'absolute';
+                contactBtn.style.bottom = `${window.innerHeight - footerRect.top + 20}px`;
+            } else {
+                contactBtn.style.position = 'fixed';
+                contactBtn.style.bottom = '20px';
+            }
+        }
+
+        window.addEventListener('scroll', adjustContactButtonPosition);
+        window.addEventListener('resize', adjustContactButtonPosition);
+
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 </head>
@@ -131,9 +181,9 @@
         <header>
             <img src="header_logo.PNG" alt="Divine Property Maintenance Logo">
             <h1>Divine Property Maintenance</h1>
-            <form onsubmit="handleFormSubmit(event)">
+            <form class="search-bar" onsubmit="handleFormSubmit(event)">
                 <input id="autocomplete" type="text" placeholder="Enter your property address here" required>
-                <button type="submit">Get Analysis</button>
+                <button type="submit">Submit</button>
             </form>
         </header>
         <div class="contact-info">
@@ -165,15 +215,6 @@
         </form>
     </div>
     <script>
-        function toggleContactForm() {
-            var form = document.getElementById('contactForm');
-            if (form.style.display === 'none' || form.style.display === '') {
-                form.style.display = 'block';
-            } else {
-                form.style.display = 'none';
-            }
-        }
-
         document.getElementById('contactFormElement').addEventListener('submit', function(event) {
             event.preventDefault();
             fetch(event.target.action, {
