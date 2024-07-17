@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Property Management Services</title>
+    <title>Divine Property Maintenance | Quote</title>
+    <meta name="description" content="Provide your property information to get a quote."/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
@@ -12,10 +13,10 @@
             background-color: #ffffff;
             color: #374550;
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }
         .container {
-            width: 80%;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -31,74 +32,199 @@
             font-size: 2.5em;
             margin: 0;
         }
-        .form-container {
-            text-align: center;
-            margin: 20px 0;
+        form {
+            margin-top: 20px;
         }
-        .form-container form input,
-        .form-container form textarea,
-        .form-container form select {
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-inline .form-group {
+            margin-right: 15px;
+        }
+        .form-inline .form-group:last-child {
+            margin-right: 0;
+        }
+        .form-control {
             width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #374550;
-            border-radius: 5px;
         }
-        .form-container form button {
+        @media (min-width: 768px) {
+            .form-inline .form-group {
+                display: inline-block;
+                width: calc(25% - 15px);
+            }
+            .form-inline .form-group.address-group {
+                width: calc(33% - 15px);
+            }
+            .form-inline .form-group.state-group {
+                width: calc(20% - 15px);
+            }
+        }
+        button[type="submit"] {
             background-color: #374550;
             color: #ffffff;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
             border-radius: 5px;
-            margin-top: 10px;
         }
     </style>
-    <script>
-        function getQueryParameter(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const address = getQueryParameter('address');
-            if (address) {
-                document.getElementById('address').value = address;
-            }
-        });
-    </script>
 </head>
 <body>
     <div class="container">
         <header>
             <img src="header_logo.PNG" alt="Divine Property Maintenance Logo">
-            <h1>Property Management Services</h1>
+            <h1>Property Information</h1>
         </header>
-        <div class="form-container">
-            <form action="https://formspree.io/f/xeojonyj" method="POST">
-                <h2>Property Details</h2>
-                <input type="text" id="address" name="address" placeholder="Property Address" required>
-                <input type="text" name="beds" placeholder="Number of Beds" required>
-                <input type="text" name="baths" placeholder="Number of Baths" required>
-                <input type="text" name="property_type" placeholder="Property Type" required>
-                <input type="text" name="square_feet" placeholder="Square Feet" required>
-                
-                <h2>Contact Information</h2>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <input type="tel" name="phone" placeholder="Your Phone Number" required>
-                <textarea name="comments" placeholder="Comments" required></textarea>
-                
-                <h2>Mailing Address</h2>
-                <input type="text" name="mailing_address" placeholder="Address" required>
-                <input type="text" name="unit_suite_apt" placeholder="Unit/Suite/Apt #" required>
-                <input type="text" name="city" placeholder="City" required>
-                <input type="text" name="state" placeholder="State" required>
-                <input type="text" name="zip_code" placeholder="Zip Code" required>
-                
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <form action="https://formspree.io/f/xeojonyj" method="POST">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="beds">Beds:</label>
+                    <select id="beds" name="beds" class="form-control" required>
+                        <option value="">Select Beds</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="baths">Baths:</label>
+                    <select id="baths" name="baths" class="form-control" required>
+                        <option value="">Select Baths</option>
+                        <option value="1">1</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2</option>
+                        <option value="2.5">2.5</option>
+                        <option value="3">3</option>
+                        <option value="3.5">3.5</option>
+                        <option value="4">4</option>
+                        <option value="4.5">4.5</option>
+                        <option value="5">5</option>
+                        <option value="5.5">5.5</option>
+                        <option value="6">6</option>
+                        <option value="6.5">6.5</option>
+                        <option value="7">7</option>
+                        <option value="7.5">7.5</option>
+                        <option value="8">8</option>
+                        <option value="8.5">8.5</option>
+                        <option value="9">9</option>
+                        <option value="9.5">9.5</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="property_type">Property Type:</label>
+                    <select id="property_type" name="property_type" class="form-control" required>
+                        <option value="">Select Property Type</option>
+                        <option value="Single Family Home">Single Family Home</option>
+                        <option value="Multi-Family Home">Multi-Family Home</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="square_feet">Square Feet:</label>
+                    <input type="number" id="square_feet" name="square_feet" class="form-control" placeholder="Square Feet" required>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Your Phone" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" class="form-control" placeholder="Your Comments" required></textarea>
+            </div>
+            <div class="form-inline">
+                <div class="form-group address-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" class="form-control" placeholder="Address" required>
+                </div>
+                <div class="form-group address-group">
+                    <label for="unit">Unit/Suite/Apt #:</label>
+                    <input type="text" id="unit" name="unit" class="form-control" placeholder="Unit/Suite/Apt #" required>
+                </div>
+                <div class="form-group address-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" class="form-control" placeholder="City" required>
+                </div>
+                <div class="form-group state-group">
+                    <label for="state">State:</label>
+                    <select id="state" name="state" class="form-control" required>
+                        <option value="">Select State</option>
+                        <option value="AL">AL</option>
+                        <option value="AK">AK</option>
+                        <option value="AZ">AZ</option>
+                        <option value="AR">AR</option>
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+                        <option value="DE">DE</option>
+                        <option value="FL">FL</option>
+                        <option value="GA">GA</option>
+                        <option value="HI">HI</option>
+                        <option value="ID">ID</option>
+                        <option value="IL">IL</option>
+                        <option value="IN">IN</option>
+                        <option value="IA">IA</option>
+                        <option value="KS">KS</option>
+                        <option value="KY">KY</option>
+                        <option value="LA">LA</option>
+                        <option value="ME">ME</option>
+                        <option value="MD">MD</option>
+                        <option value="MA">MA</option>
+                        <option value="MI">MI</option>
+                        <option value="MN">MN</option>
+                        <option value="MS">MS</option>
+                        <option value="MO">MO</option>
+                        <option value="MT">MT</option>
+                        <option value="NE">NE</option>
+                        <option value="NV">NV</option>
+                        <option value="NH">NH</option>
+                        <option value="NJ">NJ</option>
+                        <option value="NM">NM</option>
+                        <option value="NY">NY</option>
+                        <option value="NC">NC</option>
+                        <option value="ND">ND</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option>
+                        <option value="OR">OR</option>
+                        <option value="PA">PA</option>
+                        <option value="RI">RI</option>
+                        <option value="SC">SC</option>
+                        <option value="SD">SD</option>
+                        <option value="TN">TN</option>
+                        <option value="TX">TX</option>
+                        <option value="UT">UT</option>
+                        <option value="VT">VT</option>
+                        <option value="VA">VA</option>
+                        <option value="WA">WA</option>
+                        <option value="WV">WV</option>
+                        <option value="WI">WI</option>
+                        <option value="WY">WY</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="zip">Zip Code:</label>
+                <input type="text" id="zip" name="zip" class="form-control" placeholder="Zip Code" required>
+            </div>
+            <button type="submit">Request Quote</button>
+        </form>
     </div>
 </body>
 </html>
