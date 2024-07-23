@@ -295,13 +295,22 @@
                 alert("There was an error sending your message. Please try again later.");
             });
         });
+
+        $(document).ready(function(){
+            $('.carousel').carousel({
+                interval: false // Disable automatic cycling
+            });
+
+            // Add looping functionality
+            $('.carousel').on('slid.bs.carousel', function () {
+                var $this = $(this);
+                if ($this.find('.carousel-inner .item:last').hasClass('active')) {
+                    $this.carousel(0);
+                }
+            });
+        });
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR1k6EKepKXtZzU/7X2AbmF1RvbJzI8r3gaNkgB2W" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function(){
-            $('.carousel').carousel();
-        });
-    </script>
 </body>
 </html>
