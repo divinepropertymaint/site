@@ -137,6 +137,13 @@
             width: 50%; /* Set width to half of the container */
         }
 
+        #autocomplete {
+            width: 90%; /* Increase width for larger search bar */
+            padding: 15px; /* Add padding for better appearance */
+            font-size: 1.5em; /* Increase font size for better readability */
+            margin-right: 10px;
+        }
+
         /* Mobile view: hide images and add a horizontal line between sections */
         @media (max-width: 768px) {
             section img {
@@ -157,7 +164,7 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiVsUIHoEx_FX4ZOwWP8_O1cjku1qJKgw&libraries=places"></script> <!-- Replace YOUR_GOOGLE_API_KEY -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places"></script>
     <script>
         // Clear session storage when the page loads
 window.onload = function() {
