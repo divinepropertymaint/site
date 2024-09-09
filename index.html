@@ -11,17 +11,158 @@
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/26791ad616.css">
     <style>
-        /* General body styles */
         body {
             font-family: 'Catamaran', sans-serif;
             background-color: #ffffff;
             color: #374550;
             margin: 0;
             padding: 0;
-            padding-top: 60px; /* Prevents overlap with the navbar */
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .description {
+            font-size: 1.2em;
+            margin: 20px 0;
+            text-align: center;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .google-business, .social-media {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .social-media img {
+            width: 24px;
+            height: 24px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+        }
+        .contact-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #374550;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .contact-form-popup {
+            display: none;
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background-color: #ffffff;
+            color: #374550;
+            padding: 20px;
+            border: 1px solid #374550;
+            border-radius: 5px;
+            width: 300px;
+        }
+        .contact-form-popup input,
+        .contact-form-popup textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #374550;
+            border-radius: 5px;
+        }
+        .contact-form-popup button {
+            background-color: #374550;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
         }
 
-        /* Fixed navbar at the top */
+        /* Carousel images fixed dimensions */
+        .carousel-inner img {
+            width: 100%;
+            height: 400px; /* Fixed height for all carousel images */
+            object-fit: cover;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            max-width: 100%;
+            width: 80%;
+            margin: 0 auto; /* Center content */
+        }
+        section img {
+            max-width: 100%;
+            width: 500px;
+            height: 500px;
+            object-fit: contain;
+        }
+        section .section-text {
+            padding: 20px;
+            min-width: 300px;
+            width: 50%;
+        }
+
+        /* Mobile view: hide images and add a horizontal line between sections */
+        @media (max-width: 768px) {
+            section img {
+                display: none;
+            }
+            .carousel {
+                margin-bottom: 40px;
+            }
+            section hr {
+                display: block;
+                width: 100%;
+                border: 0;
+                height: 1px;
+                background-color: #ccc;
+                margin: 20px 0;
+            }
+        }
+
+        /* Adjust the width of the search bar */
+        #autocomplete {
+            width: 70%;
+            padding: 10px;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        /* Navigation styles */
         .navbar {
             position: fixed;
             top: 0;
@@ -34,7 +175,6 @@
             justify-content: center;
         }
 
-        /* Links in the navbar */
         .nav-links {
             list-style-type: none;
             margin: 0;
@@ -57,7 +197,6 @@
             color: #ccc;
         }
 
-        /* Hamburger menu (hidden by default) */
         .hamburger {
             display: none;
             font-size: 30px;
@@ -68,7 +207,6 @@
             color: white;
         }
 
-        /* Mobile-specific styles */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -98,7 +236,7 @@
 </head>
 <body>
 
-<!-- Navigation bar with hamburger menu -->
+<!-- Navigation Bar -->
 <nav class="navbar">
     <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
@@ -108,7 +246,6 @@
     <div class="hamburger" id="hamburger">&#9776;</div>
 </nav>
 
-<!-- Content for the rest of your website here -->
 <div class="container">
     <header>
         <img src="header_logo.PNG" alt="Divine Property Maintenance Logo">
@@ -124,11 +261,132 @@
         <p><em>Licensed and Insured</em></p>
         <p>No job too big or too small for Divine Property Maintenance.</p>
     </header>
-    <!-- The rest of your content -->
+    <div class="description">
+        <p>Divine Property Maintenance keeps your Palm Beach, Martin, and St. Lucie county property sparkling clean and well-maintained. We offer pressure cleaning services for both residential and commercial clients.</p>
+    </div>
+
+    <!-- Carousel Section -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="before_after1.jpeg" alt="Before and After 1">
+            </div>
+            <div class="item">
+                <img src="before_after2.jpeg" alt="Before and After 2">
+            </div>
+            <div class="item">
+                <img src="before_after3.jpeg" alt="Before and After 3">
+            </div>
+            <div class="item">
+                <img src="before_after4.jpeg" alt="Before and After 4">
+            </div>
+        </div>
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Text Sections Below Carousel -->
+    <section>
+        <div style="flex: 1;">
+            <img src="residental.png" alt="Residential Pressure Washing">
+        </div>
+        <div class="section-text" style="flex: 1;">
+            <h2>Transform Your Home with Professional Residential Pressure Washing</h2>
+            <p>Divine Property Maintenance offers expert residential pressure washing services in St. Lucie or Palm Beach County, FL, designed to lift away dirt, grime, and stains from pavers and exterior surfaces, restoring them to their original brilliance.</p>
+        </div>
+        <hr><!-- Line between sections for mobile -->
+    </section>
+
+    <section>
+        <div class="section-text" style="flex: 1;">
+            <h2>Boost Your Business Image with Commercial Pressure Washing</h2>
+            <p>Maintaining a clean, presentable exterior is crucial for upholding your brand’s identity. Impress your clients and elevate your curb appeal by choosing Divine Property Maintenance for top-quality commercial pressure washing services.</p>
+        </div>
+        <div style="flex: 1;">
+            <img src="commerical.png" alt="Commercial Pressure Washing">
+        </div>
+    </section>
+    <div class="social-media">
+        <p>Follow us on social media:</p>
+        <ul class="list-inline">
+            <li><a href="https://www.instagram.com/divinepropertymaintenance/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/share/cEKArAL4b3SsCj75/?mibextid=LQQJ4d" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://g.co/kgs/vGFQkhq" target="_blank"><i class="fa fa-google"></i></a></li>
+        </ul>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 Divine Property Maintenance. All rights reserved.</p>
+</footer>
+
+<!-- Contact Form Button and Popup -->
+<button class="contact-btn" onclick="toggleContactForm()">Contact Us</button>
+<div class="contact-form-popup" id="contactForm">
+    <form id="contactFormElement" action="https://formspree.io/f/xeojonyj" method="POST">
+        <h2>Contact Us</h2>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
 </div>
 
 <script>
-    // Toggle the display of the menu on mobile
+    // Toggle Contact Form Popup
+    function toggleContactForm() {
+        var form = document.getElementById('contactForm');
+        if (form.style.display === 'none' || form.style.display === '') {
+            form.style.display = 'block';
+        } else {
+            form.style.display = 'none';
+        }
+    }
+
+    // Handle Google Places Autocomplete for Search
+    function initialize() {
+        var input = document.getElementById('autocomplete');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        autocomplete.addListener('place_changed', function() {
+            var place = autocomplete.getPlace();
+            var address = '', city = '', state = '', zip = '';
+            place.address_components.forEach(function(component) {
+                if (component.types.includes('street_number')) address += component.long_name + ' ';
+                if (component.types.includes('route')) address += component.long_name;
+                if (component.types.includes('locality')) city = component.long_name;
+                if (component.types.includes('administrative_area_level_1')) state = component.short_name;
+                if (component.types.includes('postal_code')) zip = component.long_name;
+            });
+            sessionStorage.setItem('address', address);
+            sessionStorage.setItem('city', city);
+            sessionStorage.setItem('state', state);
+            sessionStorage.setItem('zip', zip);
+        });
+    }
+
+    // Load Google Maps API
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    // Carousel Control
+    $(document).ready(function(){
+        $('.carousel').carousel({
+            interval: false // Disable automatic cycling
+        });
+    });
+
+    // Mobile Menu Toggle
     document.getElementById('hamburger').addEventListener('click', function() {
         document.getElementById('navLinks').classList.toggle('active');
     });
