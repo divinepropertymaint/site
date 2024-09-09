@@ -137,7 +137,14 @@
             width: 50%; /* Set width to half of the container */
         }
 
-        /* Mobile view: hide images and center text */
+        #autocomplete {
+            width: 90%; /* Increase width for larger search bar */
+            padding: 15px; /* Add padding for better appearance */
+            font-size: 1.5em; /* Increase font size for better readability */
+            margin-right: 10px;
+        }
+
+        /* Mobile view: hide images and add a horizontal line between sections */
         @media (max-width: 768px) {
             section img {
                 display: none; /* Hide the images on mobile */
@@ -152,11 +159,6 @@
                 height: 1px;
                 background-color: #ccc;
                 margin: 20px 0; /* Space between sections */
-            }
-
-            .section-text {
-                width: 100%; /* Full width for text on mobile */
-                text-align: center; /* Center the text */
             }
         }
     </style>
