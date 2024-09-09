@@ -107,55 +107,44 @@
             border-radius: 5px;
             margin-top: 10px;
         }
-
-        /* Carousel images fixed dimensions */
+        .contact-form-popup input:invalid,
+        .contact-form-popup textarea:invalid {
+            border-color: red;
+        }
+        .contact-form-popup input:focus:invalid,
+        .contact-form-popup textarea:focus:invalid {
+            outline: none;
+            border-color: red;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        #autocomplete {
+            width: 70%;
+            padding: 10px;
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #374550;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
         .carousel-inner img {
             width: 100%;
-            height: 400px; /* Fixed height for all carousel images */
-            object-fit: cover; /* Ensures the image covers the entire area */
-        }
-
-        section {
-            display: flex;
-            align-items: center;
-            margin: 40px 0;
-            flex-wrap: wrap;
-            max-width: 100%;
-            width: 80%; /* Matching carousel width */
-            margin: 0 auto; /* Center content */
-        }
-        section img {
-            max-width: 100%;
-            width: 500px; /* Set the image size to 500x500 */
-            height: 500px;
-            object-fit: contain; /* Ensure the image maintains aspect ratio */
-        }
-        section .section-text {
-            padding: 20px;
-            min-width: 300px;
-            width: 50%; /* Set width to half of the container */
-        }
-
-        /* Mobile view: hide images and add a horizontal line between sections */
-        @media (max-width: 768px) {
-            section img {
-                display: none; /* Hide the images on mobile */
-            }
-            .carousel {
-                margin-bottom: 40px; /* Two lines space */
-            }
-            section hr {
-                display: block;
-                width: 100%;
-                border: 0;
-                height: 1px;
-                background-color: #ccc;
-                margin: 20px 0; /* Space between sections */
-            }
+            height: auto;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiVsUIHoEx_FX4ZOwWP8_O1cjku1qJKgw&libraries=places"></script>
     <script>
         function initialize() {
             var input = document.getElementById('autocomplete');
@@ -271,31 +260,6 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-     <!-- Text Sections Below Carousel -->
-        <section>
-            <div style="flex: 1;">
-                <img src="residental.png" alt="Residential Pressure Washing">
-            </div>
-            <div class="section-text" style="flex: 1;">
-                <h2>Transform Your Home with Professional Residential Pressure Washing</h2>
-                <p>Divine Property Maintenance offers expert residential pressure washing services in St. Lucie or Palm Beach County, FL, designed to lift away dirt, grime, and stains from pavers and exterior surfaces, restoring them to their original brilliance. Our high-quality cleaning services not only remove the buildup but also enhance the natural beauty of your outdoor spaces.</p>
-                <p>Our residential pressure washing services go beyond simple cleaning. We use a blend of soft washing and powerful pressure cleaning techniques to tackle tough stains like tire marks, grease, and deeply embedded dirt. These methods are safe yet effective, ensuring your surfaces look as good as new.</p>
-                <p>Regular pressure washing does more than improve your home’s curb appeal—it protects your property from the damaging effects of mold, algae, and other organic growth. Contact us today for a free estimate on residential pressure washing services in St. Lucie or Palm Beach County, FL, and surrounding areas.</p>
-            </div>
-            <hr><!-- Line between sections for mobile -->
-        </section>
-
-        <section>
-            <div class="section-text" style="flex: 1;">
-                <h2>Boost Your Business Image with Commercial Pressure Washing</h2>
-                <p>Maintaining a clean, presentable exterior is crucial for upholding your brand’s identity. A dirty, unkempt building can signal to clients that attention to detail is lacking. In fact, many may assume that a neglected exterior reflects poorly on what’s inside your business.</p>
-                <p>Impress your clients and elevate your curb appeal by choosing Divine Property Maintenance for top-quality commercial pressure washing services. Our team uses advanced, high-powered equipment to ensure every inch of your building is thoroughly cleaned.</p>
-                <p>Call <a href="tel:+17726785016" style="color: #374550; text-decoration: underline;">(772) 678-5016</a> today for a free estimate on refreshing the exterior of your business. Let our expert team do the hard work, ensuring your property makes the best impression on every passerby.</p>
-            </div>
-            <div style="flex: 1;">
-                <img src="commerical.png" alt="Commercial Pressure Washing">
-            </div>
-        </section>
         <div class="social-media">
             <p>Follow us on social media:</p>
             <ul class="list-inline">
