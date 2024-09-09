@@ -138,9 +138,9 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            display: none;
         }
         .nav-links li {
-            display: inline-block;
             margin: 0 15px;
         }
         .nav-links a {
@@ -169,6 +169,7 @@
                 background-color: rgba(0, 0, 0, 0.8);
                 width: 100%;
                 text-align: center;
+                padding: 10px 0;
             }
         }
         /* Image Section */
@@ -186,6 +187,7 @@
         section .section-text {
             padding: 20px;
             flex: 1;
+            text-align: center;
         }
         @media (max-width: 768px) {
             section img {
@@ -201,6 +203,8 @@
             }
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiVsUIHoEx_FX4ZOwWP8_O1cjku1qJKgw&libraries=places"></script>
     <script>
         function initialize() {
@@ -235,6 +239,13 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+        });
+
+        // Initialize carousel control
+        $(document).ready(function(){
+            $('.carousel').carousel({
+                interval: false // Disable automatic cycling
+            });
         });
     </script>
 </head>
