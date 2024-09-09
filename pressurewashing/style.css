@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.hero {
+    background-color: #3A4750;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.hero .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.before-after {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.before, .after {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.services {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2A2A2A;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #0078A8;
+}
+
+footer {
+    background-color: #3A4750;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.phone {
+    display: block;
+    margin-top: 10px;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.phone:hover {
+    text-decoration: underline;
+}
