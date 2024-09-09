@@ -8,6 +8,7 @@
     <meta property="og:image" content="share_logo.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             font-family: 'Catamaran', sans-serif;
@@ -54,10 +55,13 @@
         .social-media a {
             margin: 0 10px;
             text-decoration: none;
+            color: #374550;
         }
-        .social-media img {
-            width: 24px;
-            height: 24px;
+        .social-media a:hover {
+            color: #555;
+        }
+        .social-media i {
+            font-size: 24px;
         }
         footer {
             text-align: center;
@@ -363,7 +367,7 @@
         });
     });
 
-    document.getElementById('hamburger').addEventListener('click', function() {
+    document.querySelector('.hamburger').addEventListener('click', function() {
         document.querySelector('.nav-links').classList.toggle('active');
     });
 </script>
