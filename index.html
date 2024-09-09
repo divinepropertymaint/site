@@ -107,10 +107,14 @@
             border-radius: 5px;
             margin-top: 10px;
         }
+
+        /* Carousel images fixed dimensions */
         .carousel-inner img {
             width: 100%;
-            height: auto;
+            height: 400px; /* Fixed height for all carousel images */
+            object-fit: cover; /* Ensures the image covers the entire area */
         }
+
         section {
             display: flex;
             align-items: center;
@@ -131,26 +135,22 @@
             min-width: 300px;
             width: 50%; /* Set width to half of the container */
         }
-        /* Mobile view: Add two lines between carousel and section, center images */
+
+        /* Mobile view: hide images and add a horizontal line between sections */
         @media (max-width: 768px) {
+            section img {
+                display: none; /* Hide the images on mobile */
+            }
             .carousel {
                 margin-bottom: 40px; /* Two lines space */
             }
-            section {
-                flex-direction: column; /* Stack image and text vertically */
-            }
-
-            section img {
-                margin-bottom: 20px;
-                width: 100%;
-                height: auto; /* Allow image to scale down on mobile */
+            section hr {
                 display: block;
-                margin-left: auto;
-                margin-right: auto; /* Center image on mobile */
-            }
-
-            section .section-text {
-                width: 100%; /* Text takes full width on mobile */
+                width: 100%;
+                border: 0;
+                height: 1px;
+                background-color: #ccc;
+                margin: 20px 0; /* Space between sections */
             }
         }
     </style>
@@ -282,6 +282,7 @@
                 <p>Our residential pressure washing services go beyond simple cleaning. We use a blend of soft washing and powerful pressure cleaning techniques to tackle tough stains like tire marks, grease, and deeply embedded dirt. These methods are safe yet effective, ensuring your surfaces look as good as new.</p>
                 <p>Regular pressure washing does more than improve your home’s curb appeal—it protects your property from the damaging effects of mold, algae, and other organic growth. Contact us today for a free estimate on residential pressure washing services in St. Lucie or Palm Beach County, FL, and surrounding areas.</p>
             </div>
+            <hr><!-- Line between sections for mobile -->
         </section>
 
         <section>
@@ -303,7 +304,6 @@
                 <li><a href="https://g.co/kgs/vGFQkhq" target="_blank"><i class="fa fa-google"></i></a></li>
             </ul>
         </div>
-    </div>
     </div>
     <footer>
         <p>&copy; 2024 Divine Property Maintenance. All rights reserved.</p>
