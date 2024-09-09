@@ -6,9 +6,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:image" content="share_logo.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/26791ad616.css">
     <style>
         body {
             font-family: 'Catamaran', sans-serif;
@@ -24,7 +23,7 @@
         }
         header {
             text-align: center;
-            padding: 40px 0;
+            padding: 20px 0;
         }
         header img {
             max-width: 150px;
@@ -106,149 +105,104 @@
             border-radius: 5px;
             margin-top: 10px;
         }
-
-        /* Carousel images fixed dimensions */
         .carousel-inner img {
             width: 100%;
             height: 400px;
             object-fit: cover;
         }
-
-        section {
-            display: flex;
-            align-items: center;
-            margin: 40px 0;
-            flex-wrap: wrap;
-            max-width: 100%;
-            width: 80%;
-            margin: 0 auto;
-        }
-        section img {
-            max-width: 100%;
-            width: 500px;
-            height: 500px;
-            object-fit: contain;
-        }
-        section .section-text {
-            padding: 20px;
-            min-width: 300px;
-            width: 50%;
-        }
-
-        /* Mobile view: hide images and add a horizontal line between sections */
-        @media (max-width: 768px) {
-            section img {
-                display: none;
-            }
-            .carousel {
-                margin-bottom: 40px;
-            }
-            section hr {
-                display: block;
-                width: 100%;
-                border: 0;
-                height: 1px;
-                background-color: #ccc;
-                margin: 20px 0;
-            }
-        }
-
-        /* Adjust the width of the search bar */
         #autocomplete {
             width: 70%;
             padding: 10px;
             font-size: 1.2em;
             margin-right: 10px;
         }
-
-        /* Mobile Menu */
         .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
             background-color: #374550;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
         }
-
-        .menu-links {
-            display: flex;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        .navbar-nav>li>a {
+            color: white !important;
         }
-
-        .menu-links li {
-            margin-right: 20px;
-        }
-
-        .menu-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-
-        .menu-links a:hover {
-            color: #ccc;
-        }
-
-        .hamburger {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-            color: white;
-        }
-
-        /* Mobile Menu Toggle */
         @media (max-width: 768px) {
-            .menu-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 50px;
-                right: 0;
-                background-color: #374550;
-                width: 100%;
-                text-align: right;
+            .search-bar button {
+                margin-top: 10px;
             }
-
-            .menu-links.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .menu-links li {
-                padding: 15px;
-                border-bottom: 1px solid #fff;
-            }
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 1.2em;
-            background-color: #374550;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
         }
     </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiVsUIHoEx_FX4ZOwWP8_O1cjku1qJKgw&libraries=places"></script>
+    <script>
+        function initialize() {
+            var input = document.getElementById('autocomplete');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+
+            autocomplete.addListener('place_changed', function() {
+                var place = autocomplete.getPlace();
+                var address = '';
+                var city = '';
+                var state = '';
+                var zip = '';
+
+                for (var i = 0; i < place.address_components.length; i++) {
+                    var component = place.address_components[i];
+
+                    if (component.types.includes('street_number')) {
+                        address += component.long_name + ' ';
+                    }
+
+                    if (component.types.includes('route')) {
+                        address += component.long_name;
+                    }
+
+                    if (component.types.includes('locality')) {
+                        city = component.long_name;
+                    }
+
+                    if (component.types.includes('administrative_area_level_1')) {
+                        state = component.short_name;
+                    }
+
+                    if (component.types.includes('postal_code')) {
+                        zip = component.long_name;
+                    }
+                }
+
+                sessionStorage.setItem('address', address);
+                sessionStorage.setItem('city', city);
+                sessionStorage.setItem('state', state);
+                sessionStorage.setItem('zip', zip);
+            });
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            window.location.href = 'contact.html';
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 <body>
 
 <!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <ul class="menu-links" id="menuLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="resources.html">Resources</a></li>
-    </ul>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Divine Property Maintenance</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="info.html">Helpful Info</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
 
 <div class="container">
@@ -266,9 +220,6 @@
         <p><em>Licensed and Insured</em></p>
         <p>No job too big or too small for Divine Property Maintenance.</p>
     </header>
-    <div class="description">
-        <p>Divine Property Maintenance keeps your Palm Beach, Martin, and St. Lucie county property sparkling clean and well-maintained. We offer pressure cleaning services for both residential and commercial clients.</p>
-    </div>
 
     <!-- Carousel Section -->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -356,7 +307,6 @@
 </div>
 
 <script>
-    // Toggle Contact Form Popup
     function toggleContactForm() {
         var form = document.getElementById('contactForm');
         if (form.style.display === 'none' || form.style.display === '') {
@@ -366,48 +316,15 @@
         }
     }
 
-    // Handle Google Places Autocomplete for Search
-    function initialize() {
-        var input = document.getElementById('autocomplete');
-        var autocomplete = new google.maps.places.Autocomplete(input);
-
-        autocomplete.addListener('place_changed', function() {
-            var place = autocomplete.getPlace();
-            var address = '', city = '', state = '', zip = '';
-            place.address_components.forEach(function(component) {
-                if (component.types.includes('street_number')) address += component.long_name + ' ';
-                if (component.types.includes('route')) address += component.long_name;
-                if (component.types.includes('locality')) city = component.long_name;
-                if (component.types.includes('administrative_area_level_1')) state = component.short_name;
-                if (component.types.includes('postal_code')) zip = component.long_name;
-            });
-            sessionStorage.setItem('address', address);
-            sessionStorage.setItem('city', city);
-            sessionStorage.setItem('state', state);
-            sessionStorage.setItem('zip', zip);
-        });
-    }
-
-    // Load Google Maps API
-    google.maps.event.addDomListener(window, 'load', initialize);
-
-    // Carousel Control
     $(document).ready(function(){
         $('.carousel').carousel({
             interval: false // Disable automatic cycling
         });
     });
 
-    // Mobile Menu Toggle
     document.getElementById('hamburger').addEventListener('click', function() {
-        document.getElementById('menuLinks').classList.toggle('active');
+        document.getElementById('navLinks').classList.toggle('active');
     });
-
-    // Handle Form Submit
-    function handleFormSubmit(event) {
-        event.preventDefault();
-        window.location.href = 'contact.html';
-    }
 </script>
 
 </body>
