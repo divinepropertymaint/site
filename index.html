@@ -159,6 +159,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places"></script> <!-- Replace YOUR_GOOGLE_API_KEY -->
     <script>
+        // Clear session storage when the page loads
+window.onload = function() {
+    sessionStorage.clear();
+};
         function initialize() {
             var input = document.getElementById('autocomplete');
             var autocomplete = new google.maps.places.Autocomplete(input);
