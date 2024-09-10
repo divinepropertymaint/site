@@ -16,6 +16,29 @@
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <style>
+        @media (max-width: 768px) {
+    .js-preloader .preloader-inner {
+        width: 50px;
+        height: 50px;
+    }
+    .js-preloader .dot, .js-preloader .dots span {
+        width: 10px;
+        height: 10px;
+    }
+}
+        @media (max-width: 768px) {
+    header img {
+        max-width: 100px; /* Reduce logo size on mobile */
+    }
+    nav .nav {
+        display: flex;
+        flex-direction: column; /* Stack menu items */
+        align-items: center;
+    }
+    nav .nav li {
+        margin-bottom: 10px; /* Space between menu items */
+    }
+}
         body {
             font-family: 'Catamaran', sans-serif;
             background-color: #ffffff;
@@ -467,5 +490,9 @@ window.onload = function() {
             });
         });
     </script>
+    window.onload = function() {
+    document.getElementById('js-preloader').style.display = 'none'; // Hide preloader
+};
+
 </body>
 </html>
