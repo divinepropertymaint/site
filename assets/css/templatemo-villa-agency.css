@@ -233,7 +233,31 @@ Pre-loader Style
   -webkit-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease;
 }
+@media (max-width: 768px) {
+    /* Ensure section-text takes full width on smaller screens */
+    .section-text {
+        width: 100%;
+        padding: 20px;
+        text-align: center; /* Center align text for better appearance on mobile */
+    }
 
+    /* Make sure the main-banner adjusts for smaller screens */
+    .main-banner {
+        height: auto;
+        background-size: cover; /* Ensure the background covers the screen properly */
+    }
+
+    .main-banner .header-text {
+        text-align: center; /* Center the text for better readability on mobile */
+        padding: 20px;
+    }
+
+    /* Ensure images within sections also scale properly */
+    section img {
+        width: 100%; /* Ensure images scale down to fit mobile screen */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
 .js-preloader.loaded {
   opacity: 0;
   visibility: hidden;
