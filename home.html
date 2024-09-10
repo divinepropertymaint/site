@@ -170,16 +170,6 @@
             </div>
           </div>
         </div>
-
-        <div style="text-align: center; margin-top: 40px;">
-          <h4>Call us at <a href="tel:+17726785016">(772) 678-5016</a> or enter your address below.</h4>
-          <form class="search-bar" onsubmit="handleFormSubmit(event)" style="display: inline-block;">
-            <input id="autocomplete" type="text" placeholder="Enter your address" required style="width: 70%; padding: 15px; font-size: 1.5em;">
-            <button type="submit" style="padding: 15px 30px; font-size: 1.2em;">Submit</button>
-          </form>
-          <p><em>Licensed and Insured</em></p>
-          <p>No job too big or too small for Divine Property Maintenance.</p>
-        </div>
       </div>
     </div>
 
@@ -209,8 +199,14 @@
           </div>
         </div>
         <div class="col-lg-5">
-          <form id="contact-form" action="" method="post">
+          <form id="contact-form" onsubmit="submitForm(event)">
             <div class="row">
+              <div class="col-lg-12">
+                <fieldset>
+                  <label for="autocomplete">Enter Address</label>
+                  <input id="autocomplete" type="text" placeholder="Enter your address" autocomplete="on" required style="width: 100%; padding: 15px; font-size: 1em;">
+                </fieldset>
+              </div>
               <div class="col-lg-12">
                 <fieldset>
                   <label for="name">Full Name</label>
@@ -237,7 +233,7 @@
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <button type="submit" id="form-submit" class="orange-button">Send Message</button>
+                  <button type="submit" id="form-submit" class="orange-button">Get Quote</button>
                 </fieldset>
               </div>
             </div>
@@ -265,7 +261,7 @@
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiVsUIHoEx_FX4ZOwWP8_O1cjku1qJKgw&libraries=places"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
   <script>
     function initialize() {
       var input = document.getElementById('autocomplete');
@@ -298,15 +294,22 @@
         sessionStorage.setItem('city', city);
         sessionStorage.setItem('state', state);
         sessionStorage.setItem('zip', zip);
-
-        // Redirect to the contact page with auto-filled form
-        window.location.href = 'contact.html';
       });
     }
 
-    function handleFormSubmit(event) {
+    function submitForm(event) {
       event.preventDefault();
-      window.location.href = 'contact.html';
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      sessionStorage.setItem('name', name);
+      sessionStorage.setItem('email', email);
+      sessionStorage.setItem('subject', subject);
+      sessionStorage.setItem('message', message);
+
+      window.location.href = 'contact.html'; // Redirect to the contact page
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
