@@ -10,3 +10,4 @@ gem 'base64', require: false
 gem 'logger', require: false
 gem 'bigdecimal', require: false
 gem 'ffi'
+gem 'google-protobuf', '4.30.2'
