@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://divinepropertymaintenance.com/sitemap.xml
