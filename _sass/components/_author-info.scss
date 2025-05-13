@@ -1,0 +1,22 @@
+.author-item {
+    margin-bottom: 15px;
+    text-align: center;
+    span {
+        display: block;
+        font-size: 21px;
+    }
+}
+
+.author-widget {
+    .widget-title {
+        font-size: 20px;
+        color: var(--text-color);
+        margin-bottom: 15px;
+        @media (min-width: 992px) {
+            font-size: 40px;
+        }
+    }
+    .author-image {
+        margin-bottom: 30px;
+    }
+}

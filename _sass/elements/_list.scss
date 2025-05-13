@@ -1,0 +1,54 @@
+/* Order & Unorder List - Start
+================================================== */
+.ul-li,
+.ul-li-right,
+.ul-li-center {
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	>li {
+		float: left;
+		list-style: none;
+		display: inline-block;
+	}
+}
+
+.ul-li {
+	justify-content: flex-start;
+}
+.ul-li-center {
+	justify-content: center;
+}
+.ul-li-right {
+	justify-content: flex-end;
+}
+
+.ul-li-block {
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	>li {
+		display: block;
+		list-style: none;
+	}
+}
+
+/* Info List Style - Start */
+.info-list {
+	li {
+		color: #161851;
+		font-size: 18px;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+	i {
+		color: #7047EB;
+		margin-right: 10px;
+	}
+}
+/* Info List Style - End */
+/* Order & Unorder List - End
+================================================== */

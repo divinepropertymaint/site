@@ -1,0 +1,116 @@
+.feature-sec-heading {
+    @media (max-width: 768px) {
+        margin-bottom: 0;
+    }
+}
+
+.feature-tab{
+    padding-top: 37px;
+    ul {
+        display: block;
+        border-bottom: 0;
+        li {
+            margin-bottom: 12px;
+            .nav-link {
+                border: none;
+                width: 100%;
+                text-align: left;
+                padding: 0;
+                font-size: 20px;
+                font-weight: 700;
+                color: var(--text-color);
+                &.active {
+                    color: var(--primary);
+                    font-weight: 700;
+                }
+                img {
+                    max-width: 38px;
+                }
+            }
+        }
+    }
+}
+.feature-content {
+    .feature-content-head {
+        padding-bottom: 10px;
+        h2 {
+            font-size: 21px;
+            font-weight: 400;
+            line-height: 24px;
+            color: var(--text-color);
+            margin-bottom: 17px;
+        }
+        p {
+            font-size: 15px;
+            text-align: justify;
+            color: var(--text-color);
+        }
+    }
+    .accordion-item {
+        border-width: 0 0 1px 0;
+        margin-bottom: 10px;
+        border-radius: 0;
+    }
+    .accordion-button {
+        padding: 0;
+        box-shadow: none;
+        font-size: 16px;
+        line-height: 25px;
+        color: var(--text-color);
+        background-color: transparent;
+        font-family: $quicksand;
+        font-weight: 700;
+        &::after {
+            transform: none;
+            font-family: $plusicon;
+            content: "\e911";
+            background-image: none;
+            color: var(--primary);
+        }
+        &.collapsed {
+            &::after {
+                content: "\e910";
+                font-family: $plusicon;
+                font-size: 14px;
+                color: var(--primary);
+                background-image: none;
+            }
+        }
+    }
+    .accordion-header {
+        padding: 4px 0;
+    }
+    .accordion-body {
+        padding-left: 0;
+        padding-bottom: 0;
+        p {
+            font-size: 15px;
+            line-height: 20px;
+        }
+    }
+}
+
+.feature-mobile {
+    .accordion-header {
+        &.parent-header {
+            .accordion-button {
+                padding: 0;
+                background-color: transparent;
+                box-shadow: none;
+                font-size: 20px;
+                font-weight: 700;
+                img {
+                    max-width: 38px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    .accordion-item.parrent-item {
+        border: none;
+    }
+    .mobile-featur-desc {
+        text-align: justify;
+        margin-bottom: 25px;
+    }
+}

@@ -1,0 +1,11 @@
+.section-title {
+	font-size: 36px;
+	line-height: 1.2;
+	color: var(--gray-text);
+	margin-bottom: 15px;
+}
+@media (min-width: 992px) {
+	.section-title {
+	  font-size: 40px;
+	}
+}

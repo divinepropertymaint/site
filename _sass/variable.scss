@@ -1,0 +1,42 @@
+// font family
+
+$quicksand: 'Quicksand', sans-serif;
+$plusicon: 'plusicon';
+$font-awesome: "Font Awesome 5 Pro";
+
+// colors
+:root {
+    --primary: #374550;
+    --dark: #333;
+    --white: #ffffff;
+    --yellow: #F9AB17;
+    --secondary: #bebebe;
+    --text-color: var(--primary);
+    --gray-text: #444444;
+}
+
+$info-color: #7047EB;
+$tertiary-color: #4582ff;
+$quinary-color: #01bda6;
+$senary-color: #80376B;
+$tertiary-light-color: #00B7FF;
+
+$white-color: #fff;
+$black-color: #161851;
+$body-color: #686f7a;
+$border-color: #ECECEC;
+$border-color2: #C4C4C4;
+$gray-color: #5E687C;
+
+// bg color
+$bg-1: #f4f4f4;
+$bg-2: #FDF7E9;
+$bg-3: #F6D693;
+$bg-5:#F1FBFC;
+
+$bg-lighten: $bg-2;
+
+// border radius
+$border-radius-sm: 5px;
+$border-radius-md: 10px;
+$border-radius-lg: 30px;

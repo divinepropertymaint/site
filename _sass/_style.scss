@@ -1,0 +1,44 @@
+/****************************
+==============================
+   table of content 
+==============================
+
+1.    Import files
+2.    Header
+3.    Banner
+4.    About Intro
+5     CTA
+6.    Course
+7.    Registration
+8.    Team
+9.    Event
+10.   Testimonial 
+11.   Blog 
+12.   Client 
+13.   Footer 
+
+******************************/
+
+//Import files
+@import "base";
+
+@import "elements/button";
+@import "elements/animation";
+@import "elements/space";
+@import "elements/list";
+@import "elements/typography";
+@import "elements/pagination";
+
+@import "components/menu";
+@import "components/banner";
+@import "components/clients-logo";
+@import "components/cta";
+@import "components/author-info";
+@import "components/gallery";
+@import "components/service";
+@import "components/blog";
+
+@import "components/testimonial";
+
+@import "components/footer";
+@import "components/slicktheme";

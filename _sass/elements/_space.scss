@@ -1,0 +1,45 @@
+/* Spacing Reset - Start
+================================================== */
+.section-space {
+	padding: 140px 0;
+}
+
+// Margin & Padding
+section, .section{ 
+	position: relative;
+}
+@media (min-width: 1200px) {
+	.page-title {
+		font-size: 70px;
+		margin-bottom: 20px;
+	}
+}
+
+.section-padding {
+	padding: 70px 0;
+}
+
+@media (min-width: 768px) {
+	.section-padding {
+		padding: 100px 0;
+	}
+
+}
+// Gutter
+@for $i from 1 through 7 {
+	.gutter-#{$i}0 {
+		margin-top: -($i * 10px)/2 !important;
+		margin-bottom: -($i * 10px)/2 !important;
+		> li,
+		> div {
+			padding-top: ($i * 10px)/2 !important;
+			padding-bottom: ($i * 10px)/2 !important;
+		}
+	}
+}
+
+div[class*="col-"] {
+	position: relative;
+}
+/* Spacing Reset - End
+================================================== */

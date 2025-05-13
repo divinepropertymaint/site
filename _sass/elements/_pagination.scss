@@ -1,0 +1,30 @@
+.panigation {
+    ul {
+        display: flex;
+        justify-content: center;
+        li {
+            a {
+                padding: 8px 12px;
+                display: inline-block;
+                border: 1px solid #dee2e6;
+            }
+            &:first-child {
+                a {
+                    border-top-left-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                }
+            }
+            &:last-child {
+                a {
+                    border-top-right-radius: 0.25rem;
+                    border-bottom-right-radius: 0.25rem;
+                }
+            }
+        }
+        .active {
+            a {
+                color: var(--primary);;
+            }
+        }
+    }
+}

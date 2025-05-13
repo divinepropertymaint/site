@@ -1,0 +1,46 @@
+.card-item {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    // box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.07);
+    transition: all ease 0.4s;
+    height: 100%;
+    &:hover {
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.07);
+    }
+    .thumb {
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    .content {
+        padding: 30px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 26px;
+        margin: 10px 0 20px;
+    }
+    .card-list {
+        li {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 5px 0;
+            position: relative;
+            padding-left: 15px;
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 5px;
+                height: 5px;
+                background-color: var(--primary);
+            }        
+        }
+    }
+}

@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<section class="banner banner-inner" style="background-image: url({{ page.banner_image | relURL }})">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-md-7">
+        <div class="tp-block-content tp-banner-content">
+          <h1 class="page-title">
+            {{ page.title }}
+          </h1>
+        </div>
+      </div><!-- end col -->
+    </div><!-- end row -->
+  </div><!-- end container -->
+</section><!-- end banner -->
+
+<div class="section section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="block-content">
+          <p>
+            {{content}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include testimonial1.html %}
+
+{% if page.comparision == true %}
+<div class="section section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="block-content">
+          <h2>{{ page.comparision_heading }}</h2>
+          <p class="block-desc">
+            {{ page.comparision_desc }}
+          </p>
+        </div>
+        
+        <div class="gap"></div>
+        
+        <div class="js-img-compare">
+          <div style="display: none;">
+            <span class="images-compare-label">Original</span>
+            <img src="{{ page.old_image }}" alt="Before">
+          </div>
+          <div>
+            <span class="images-compare-label">Modified</span>
+            <img src="{{ page.new_image }}" alt="After">
+          </div>
+        </div>	
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% include cta.html %}

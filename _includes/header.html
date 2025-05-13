@@ -1,0 +1,82 @@
+<div class="header-top">
+   <div class="container">
+      <div class="row gutter-20">
+         <div class="col-md-6">
+            <div class="header-top-social text-center text-md-start">
+               {% if site.data.social %}
+                  <ul class="footer-social">
+                        {% include social.html %}
+                  </ul>
+               {% endif %}
+            </div>
+         </div><!-- ./col -->
+         <div class="col-md-6 text-center text-md-end header-cta text-light">
+            <a href="tel:+17726785016"><span>Call us at</span> (772) 678-5016 </a>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Header -->
+<header class="header-s1 is-sticky is-shrink">
+  <div class="header-main">
+     <div class="container">
+        <div class="row justify-content-between align-items-center">
+           <!-- Logo  -->
+           <div class="col-md-3 col-6">
+              <div class="header-logo">
+                <a href="{{site.baseurl}}/">
+                  <img src="{{ site.logo.main | relative_url }}" alt="{{ site.title }}"/>
+                </a>
+              </div>
+           </div>
+           <div class="col-md-6 col-6">
+              <!-- Menu Toogle -->
+              <div class="header-nav-toggle text-end">
+                 <a href="#" class="navbar-toggle" data-menu-toggle="header-menu">
+                    <div class="toggle-line">
+                       <span></span>
+                    </div>
+                 </a>
+              </div>
+              <!-- Menu Toogle -->
+              <div class="header-navbar">
+                
+                 <nav class="header-menu" id="header-menu">
+                     {% if site.data.menus.primary[0] %}
+                        {% for item in site.data.menus.primary %}
+                           {% if item.subfolderitems[0] %}
+                              <ul class="menu">
+                              {% for entry in item.subfolderitems %}
+                                    <li class="{% if entry.subsubfolderitems[0] %}has-sub{% endif %} menu-item">
+                                       <a class="menu-link nav-link {% if entry.subsubfolderitems[0] %}menu-toggle{% endif %}" href="{{ entry.url }}">{{ entry.name }}</a>
+                                       {% if entry.subsubfolderitems[0] %}
+                                          <ul class="menu-sub menu-drop">
+                                             {% for subentry in entry.subsubfolderitems %}
+                                                <li class="menu-item">
+                                                   <a class="menu-link nav-link" href="{{ subentry.url }}">{{ subentry.name }}</a>
+                                                </li>
+                                             {% endfor %}
+                                          </ul>
+                                       {% endif %}
+                                    </li>
+                              {% endfor %}
+                              </ul>
+                           {% endif %}
+                        {% endfor %}
+                     {% endif %}                    
+                 </nav>
+              </div><!-- .header-navbar -->
+           </div>
+           <!-- ./col -->
+           <div class="col-md-3 d-none d-lg-block">
+              <ul class="header-btn menu">
+                 <li class="menu-item">
+                    <a class="btn btn-primary get-btn" href="{{site.baseurl}}/contact/">Get Started</a>
+                 </li>
+              </ul><!-- header btn -->
+           </div>
+        </div>
+     </div>
+  </div>
+</header><!-- end header -->

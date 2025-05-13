@@ -1,0 +1,42 @@
+<!-- footer -->
+<footer class="footer">
+    <div class="footer-top footer-top-1 bg-2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <a href="{{site.baseurl}}/">
+                                <img src="{{ site.logo.main | relative_url }}" alt="{{ site.title }}"/>
+                            </a>
+                        </div>
+                        
+                        {% if site.footer.copyright_text %}
+                            <p class="widget-text">
+                                {{ site.footer.copyright_text }}
+                            </p>
+                        {% endif %}
+
+                        {% if site.data.social %}
+                        <ul class="footer-social">
+                            {% include social.html %}
+                        </ul>
+                        {% endif %}
+                        <ul class="widget-list">
+                            {% for item in site.data.menus.menu_one %}
+                                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    
+                </div><!--  ./col -->
+               
+            </div><!-- ./row -->
+        </div><!-- ./container -->
+    </div><!-- ./footer-top -->
+</footer><!-- ./footer -->
+
+<!-- back to top -->
+<a href="#" id="back-to-top">
+  <i class="uicon uicon-arrow-up"></i>
+</a>

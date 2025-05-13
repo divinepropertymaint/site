@@ -1,0 +1,66 @@
+primary:
+  - title: Main Menu
+    subfolderitems:
+      - name: "Home"
+        url: "../"
+        weight: 2
+      - name: "About Us"
+        url: "/about-us/"
+        weight: 2
+      - name: "Services"
+        url: "/services/"
+        weight: 3
+      - name: "Gallery"
+        url: "/gallery/"
+        weight: 3
+      - name: "Contact"
+        url: "/contact/"
+        weight: 2
+
+footer_menu_one_title: Usefull Link
+menu_one:
+
+- title: "About us"
+  url: "/about-us/"
+- title: "Services"
+  url: "/services/"
+- title: "Gallery"
+  url: "/gallery/"
+- title: "Contact"
+  url: "/contact/"
+
+footer_menu_two_title: Resources
+menu_two:
+
+- title: "Home"
+  url: "../"
+
+- title: "Testimonial"
+  url: "/testimonial/"
+
+- title: "Blog"
+  url: "/blog/"
+
+- title: "Pricing"
+  url: "/pricing/"
+
+- title: "404"
+  url: "/404/"
+
+footer_menu_three_title: Company
+menu_three:
+
+- title: "About us"
+  url: "/about/"
+
+- title: "FAQ"
+  url: "/faq/"
+
+- title: "Contact"
+  url: "/contact/"
+
+- title: "404"
+  url: "/404/"
+
+- title: "Blog"
+  url: "/blog/"
