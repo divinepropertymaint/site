@@ -83,7 +83,7 @@ a:focus {
 }
 a {
   color: var(--primary);
-  @include transition();
+  transition: all ease .4s;
   &:hover {
     text-decoration: none;
     color: var(--primary);
@@ -182,7 +182,6 @@ hr {
     .owl-nav {
       visibility: hidden;
       opacity: 0;
-      @include transition();
       .owl-prev,
       .owl-next {
         color: #fff;
@@ -202,7 +201,7 @@ hr {
         padding: 0;
         opacity: 1;
         cursor: pointer;
-        @include transition();
+        
         .weekly-top-course &{
           background-color: var(--secondary);
         }

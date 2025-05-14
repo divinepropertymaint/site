@@ -52,7 +52,6 @@
 	border: 2px solid transparent;
 	background-color: var(--secondary);
 	border-color: var(--secondary);
-	@include transition();
 	position: relative;
 	&:focus {
 		outline: 0;
