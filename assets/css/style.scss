@@ -2,5 +2,5 @@
 # this ensures Jekyll reads the file to be transformed into CSS later
 ---
 
-@import "components/fonts";
-@import "style";
+@use "components/fonts.scss";
+@use "style.scss";

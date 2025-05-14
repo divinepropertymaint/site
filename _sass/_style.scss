@@ -20,25 +20,25 @@
 ******************************/
 
 //Import files
-@import "base";
+@use "base.scss";
 
-@import "elements/button";
-@import "elements/animation";
-@import "elements/space";
-@import "elements/list";
-@import "elements/typography";
-@import "elements/pagination";
+@use "elements/button.scss";
+@use "elements/animation.scss";
+@use "elements/space.scss";
+@use "elements/list.scss";
+@use "elements/typography.scss";
+@use "elements/pagination.scss";
 
-@import "components/menu";
-@import "components/banner";
-@import "components/clients-logo";
-@import "components/cta";
-@import "components/author-info";
-@import "components/gallery";
-@import "components/service";
-@import "components/blog";
+@use "components/menu.scss";
+@use "components/banner.scss";
+@use "components/clients-logo.scss";
+@use "components/cta.scss";
+@use "components/author-info.scss";
+@use "components/gallery.scss";
+@use "components/service.scss";
+@use "components/blog.scss";
 
-@import "components/testimonial";
+@use "components/testimonial.scss";
 
-@import "components/footer";
-@import "components/slicktheme";
+@use "components/footer.scss";
+@use "components/slicktheme.scss";
