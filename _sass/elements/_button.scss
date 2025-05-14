@@ -44,7 +44,7 @@
 .btn {
 	display: inline-block;
 	font-weight: 600;
-	color: $white-color;
+	color: #fff;
 	padding: 11px 40px;
 	font-size: 16px;
 	line-height: 26px;
@@ -60,11 +60,11 @@
 	}
 	&:hover {
 		background-color: transparent;
-		color: $white-color;
-		border-color: $white-color;
+		color: #fff;
+		border-color: #fff;
 	}
 	&.btn-primary {
-		color: $white-color;
+		color: #fff;
 		border-color: var(--primary);
 		background-color: var(--primary);
 		&:hover {
@@ -73,7 +73,7 @@
 		}
 	}
 	&.btn-info {
-		color: $white-color;
+		color: #fff;
 		border-color: $info-color;
 		background-color: $info-color;
 		&:hover {
@@ -82,21 +82,21 @@
 		}
 	}
 	&.btn-dark {
-		color: $white-color;
+		color: #fff;
 		border-color: $black-color;
 		background-color: $black-color;
 		&:hover {
-			color: $white-color;
+			color: #fff;
 			border-color: var(--primary);
 			background-color: var(--primary);
 		}
 	}
 	&.btn-light {
 		color: $black-color;
-		border-color: $white-color;
-		background-color: $white-color;
+		border-color: #fff;
+		background-color: #fff;
 		&:hover {
-			color: $white-color;
+			color: #fff;
 			background-color: transparent;
 		}
 	}
@@ -105,15 +105,15 @@
 		border-color: $senary-color;
 		background-color: $senary-color;
 		&:hover {
-			color: $white-color;
+			color: #fff;
 			border-color: var(--secondary);
 			background-color: var(--secondary);
 		}
 	}
 	&.btn-outline-secondary {
-		color: $white-color;
+		color: #fff;
 		background-color: transparent;
-		border-color: $white-color;
+		border-color: #fff;
 		&:hover {
 			background-color: var(--secondary);
 			border-color: var(--secondary);
@@ -126,7 +126,7 @@
 			padding: 6px 22px;
 		}
 		&:hover {
-			color: $white-color;
+			color: #fff;
 		}
 	}
 	&.btn-outline-senary {
@@ -134,7 +134,7 @@
 		border-color: $senary-color;
 		background-color: transparent;
 		&:hover {
-			color: $white-color;
+			color: #fff;
 			background-color: $senary-color;
 		}
 	}
@@ -152,7 +152,7 @@
 		&:hover {
 			background-color: var(--primary);
 			border-color: var(--primary);
-			color: $white-color;
+			color: #fff;
 		}
 	}
 	&.sm-btn {
@@ -196,7 +196,7 @@
 .btn-secondary:not(:disabled):not(.disabled):active,
 .show > .btn-secondary.dropdown-toggle {
 	background-color: transparent;
-	border-color: $white-color;
+	border-color: #fff;
 }
 
 // btn outline
