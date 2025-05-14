@@ -23,7 +23,7 @@
        
         .has-fixed &{
             position: fixed !important;
-            box-shadow: 0 0 20px 0 rgba($black-color, 0.08);
+            box-shadow: 0 0 20px 0 rgba(#000, 0.08);
             background: #fff;
             top: 0;
         }
@@ -71,7 +71,7 @@
            
         }
         &-overlay{
-            background: rgba($black-color, 0.7);
+            background: rgba(#000, 0.7);
             left: 100%;
             width: 0;
             z-index: -1;

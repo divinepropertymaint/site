@@ -71,19 +71,11 @@
 			background-color: transparent;
 		}
 	}
-	&.btn-info {
-		color: #fff;
-		border-color: $info-color;
-		background-color: $info-color;
-		&:hover {
-			color: $info-color;
-			background-color: transparent;
-		}
-	}
+	
 	&.btn-dark {
 		color: #fff;
-		border-color: $black-color;
-		background-color: $black-color;
+		border-color: #000;
+		background-color: #000;
 		&:hover {
 			color: #fff;
 			border-color: var(--primary);
@@ -91,7 +83,7 @@
 		}
 	}
 	&.btn-light {
-		color: $black-color;
+		color: #000;
 		border-color: #fff;
 		background-color: #fff;
 		&:hover {
@@ -99,16 +91,7 @@
 			background-color: transparent;
 		}
 	}
-	&.btn-senary {
-		color: #ffffff;
-		border-color: $senary-color;
-		background-color: $senary-color;
-		&:hover {
-			color: #fff;
-			border-color: var(--secondary);
-			background-color: var(--secondary);
-		}
-	}
+	
 	&.btn-outline-secondary {
 		color: #fff;
 		background-color: transparent;
@@ -128,15 +111,7 @@
 			color: #fff;
 		}
 	}
-	&.btn-outline-senary {
-		color: $senary-color;
-		border-color: $senary-color;
-		background-color: transparent;
-		&:hover {
-			color: #fff;
-			background-color: $senary-color;
-		}
-	}
+	
 	&.btn-ins {
 		&:hover {
 			color: var(--secondary);

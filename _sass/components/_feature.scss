@@ -61,7 +61,6 @@
         font-weight: 700;
         &::after {
             transform: none;
-            font-family: $plusicon;
             content: "\e911";
             background-image: none;
             color: var(--primary);
@@ -69,7 +68,6 @@
         &.collapsed {
             &::after {
                 content: "\e910";
-                font-family: $plusicon;
                 font-size: 14px;
                 color: var(--primary);
                 background-image: none;
