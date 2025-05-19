@@ -1,6 +1,7 @@
 ---
 title: 'About Us'
-meta_title: "A better team to build best software and technology"
+meta_title: "About Us | At Divine Property Maintenance"
+description: "At Divine Property Maintenance, we're more than just a pressure washing business — we're a family-owned company that takes pride in helping our community shine, one surface at a time. With years of hands-on experience and a commitment to quality, we treat every home and business like it's our own."
 date: 2018-02-22T17:01:34+07:00
 layout: default
 banner_image: "../assets/images/gallery/image37.jpg"
