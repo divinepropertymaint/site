@@ -1,3 +1,4 @@
+@use "sass:math";
 /* Spacing Reset - Start
 ================================================== */
 .section-space {
@@ -26,17 +27,20 @@ section, .section{
 
 }
 // Gutter
+
 @for $i from 1 through 7 {
-	.gutter-#{$i}0 {
-		margin-top: -($i * 10px)/2 !important;
-		margin-bottom: -($i * 10px)/2 !important;
-		> li,
-		> div {
-			padding-top: ($i * 10px)/2 !important;
-			padding-bottom: ($i * 10px)/2 !important;
-		}
-	}
+  .gutter-#{$i}0 {
+    margin-top: -(math.div($i * 10px, 2)) !important;
+    margin-bottom: -(math.div($i * 10px, 2)) !important;
+
+    > li,
+    > div {
+      padding-top: math.div($i * 10px, 2) !important;
+      padding-bottom: math.div($i * 10px, 2) !important;
+    }
+  }
 }
+
 
 div[class*="col-"] {
 	position: relative;

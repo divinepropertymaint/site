@@ -45,16 +45,7 @@
     }
 }
 
-.sec-roof {
-    .card-item {
-        text-align: center;
-        .content {
-            h3 {
-                padding-bottom: 20px;
-            }
-            strong {
-                display: block;
-            }
-        }
-    }
+.sticky-image {
+    position: sticky;
+    top: 100px;
 }
