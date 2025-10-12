@@ -99,6 +99,12 @@
     .inputmsg {
         min-height: 90px;
     }
+    .service-options {
+        label {
+            padding-right: 10px;
+            padding-bottom: 5px;
+        }
+    }
 }
 
 @media (min-width: 992px) {
