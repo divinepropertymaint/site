@@ -11,96 +11,150 @@
 
                 </div>
             </div> <!-- ./col -->
-            <div class="col-md-5">
-                <form class="quote-form" action="https://formspree.io/f/xeojonyj" method="POST">
-                    <h3 class="quote-title">Get a free quote</h3>
-                    <div class="row gutter-30">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <input type="text" name="full_name" class="minput form-control required" placeholder="Full Name" required>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <input type="text" name="cf_email" class="minput form-control required" placeholder="Email" required>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <input type="text" name="phone_number" class="minput form-control required" placeholder="Phone" required>
-                            </div>
-                        </div>
-                        <!-- Service Type -->
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="customer_type">Service Type *</label>
-                                <select id="customer_type" name="customer_type" class="minput form-control" required>
-                                    <option value="">Select Type</option>
-                                    <option value="Commercial">Commercial</option>
-                                    <option value="Residential">Residential</option>
-                                </select>
-                            </div>
-                        </div>
+            <div class="col-md-5 quote-form">
+                <div class="gap"></div>
+                <h3 class="quote-title">Get a free quote</h3>
+                <ul class="nav nav-tabs" id="formTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="residential-tab" data-bs-toggle="tab" data-bs-target="#residential" type="button" role="tab" aria-controls="residential" aria-selected="true">Residential</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="commercial-tab" data-bs-toggle="tab" data-bs-target="#commercial" type="button" role="tab" aria-controls="commercial" aria-selected="false">Commercial</button>
+                    </li>
+                </ul>
+                <div class="gap"></div>
+                <div class="tab-content" id="formTabContent">
+                        <div class="tab-pane fade show active" id="residential" role="tabpanel" aria-labelledby="residential-tab">
+                            <form class="" action="https://formspree.io/f/xeojonyj" method="POST">
+                                <div class="row gutter-30">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="full_name" class="minput form-control required" placeholder="Full Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="cf_email" class="minput form-control required" placeholder="Email" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="phone_number" class="minput form-control required" placeholder="Phone" required>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- Residential Services -->
+                                    <div class="col-12 service-options" id="residential_services">
+                                        <div class="form-group">
+                                            <strong>What Services Do You Need? *</strong> <br>
+                                            <label><input type="checkbox" name="services[]" value="Pressure cleaning"> Pressure cleaning</label>
+                                            <label><input type="checkbox" name="services[]" value="Soft wash"> Soft wash</label>
+                                            <label><input type="checkbox" name="services[]" value="Roof Sealing"> Roof Sealing</label>
+                                            <label><input type="checkbox" name="services[]" value="Roof cleaning"> Roof cleaning</label>
+                                            <label><input type="checkbox" name="services[]" value="House wash"> House wash</label>
+                                            <label><input type="checkbox" name="services[]" value="Driveways"> Driveways</label>
+                                            <label><input type="checkbox" name="services[]" value="Pool decks"> Pool decks</label>
+                                            <label><input type="checkbox" name="services[]" value="Gutter cleaning"> Gutter cleaning</label>
+                                            <label><input type="checkbox" name="services[]" value="Paver sealing"> Paver sealing</label>
+                                            <label><input type="checkbox" name="services[]" value="Window washing"> Window washing</label>
+                                            <label><input type="checkbox" name="services[]" value="Fences"> Fences</label>
+                                        </div>
+                                    </div>
 
-                        <!-- Residential Services -->
-                        <div class="col-12 service-options" id="residential_services" style="display: none;">
-                            <div class="form-group">
-                                <label><input type="checkbox" name="services[]" value="Pressure cleaning"> Pressure cleaning</label>
-                                <label><input type="checkbox" name="services[]" value="Soft wash"> Soft wash</label>
-                                <label><input type="checkbox" name="services[]" value="Roof Sealing"> Roof Sealing</label>
-                                <label><input type="checkbox" name="services[]" value="Roof cleaning"> Roof cleaning</label>
-                                <label><input type="checkbox" name="services[]" value="House wash"> House wash</label>
-                                <label><input type="checkbox" name="services[]" value="Driveways"> Driveways</label>
-                                <label><input type="checkbox" name="services[]" value="Pool decks"> Pool decks</label>
-                                <label><input type="checkbox" name="services[]" value="Gutter cleaning"> Gutter cleaning</label>
-                                <label><input type="checkbox" name="services[]" value="Paver sealing"> Paver sealing</label>
-                                <label><input type="checkbox" name="services[]" value="Window washing"> Window washing</label>
-                                <label><input type="checkbox" name="services[]" value="Fences"> Fences</label>
-                            </div>
-                        </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="where_you_find" class="minput form-control required" placeholder="How did you hear about us? *" required>
+                                        </div>
+                                    </div>
 
-                            <!-- Commercial Services -->
-                        <div class="col-12 service-options" id="commercial_services" style="display: none;">
-                            <div class="form-group">
-                                <label><input type="checkbox" name="services[]" value="Store front cleaning"> Store front cleaning</label>
-                                <label><input type="checkbox" name="services[]" value="Clubhouses"> Clubhouses</label>
-                                <label><input type="checkbox" name="services[]" value="Walk ways"> Walk ways</label>
-                                <label><input type="checkbox" name="services[]" value="Gas station cleaning"> Gas station cleaning</label>
-                                <label><input type="checkbox" name="services[]" value="Dumpster pad cleaning"> Dumpster pad cleaning</label>
-                                <label><input type="checkbox" name="services[]" value="Restaurants"> Restaurants</label>
-                                <label><input type="checkbox" name="services[]" value="Parking lot clean ups"> Parking lot clean ups</label>
-                                <label><input type="checkbox" name="services[]" value="Window washing"> Window washing</label>
-                                <label><input type="checkbox" name="services[]" value="HOA's"> HOA's</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <textarea name="cf_message" class="minput inputmsg form-control required" rows="3" placeholder="Your Message"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-12 mt-20">
-                            <button type="submit" class="btn btn-primary">
-                                Get Quote!
-                            </button>
-                        </div>
-                    </div>                        
-                </form>
-                <script>
-                    const customerTypeSelect = document.getElementById('customer_type');
-                    const residentialServices = document.getElementById('residential_services');
-                    const commercialServices = document.getElementById('commercial_services');
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="phone_number" class="minput form-control required" placeholder="Phone" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea name="cf_message" class="minput inputmsg form-control required" rows="3" placeholder="Your Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-20">
+                                        <button type="submit" class="btn btn-primary">
+                                            Get Quote!
+                                        </button>
+                                    </div>
+                                </div>    
+                            </form>
+                        </div><!-- ./tab-pane -->
 
-                    customerTypeSelect.addEventListener('change', function() {
-                        residentialServices.style.display = 'none';
-                        commercialServices.style.display = 'none';
+                        <div class="tab-pane fade" id="commercial" role="tabpanel" aria-labelledby="commercial-tab">
+                            <form class="" action="https://formspree.io/f/xeojonyj" method="POST">
+                                <div class="row gutter-30">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="company_name" class="minput form-control required" placeholder="Company Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="full_name" class="minput form-control required" placeholder="Full Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="phone_number" class="minput form-control required" placeholder="Phone" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="cf_email" class="minput form-control required" placeholder="Email" required>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="cf_address" class="minput form-control required" placeholder="Address" required>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- Commercial Services -->
+                                    <div class="col-12 service-options" id="commercial_services">
+                                        <div class="form-group">
+                                            <strong>What Services Do You Need? *</strong> <br>
+                                            <label><input type="checkbox" name="services[]" value="Store front cleaning"> Store front cleaning</label>
+                                            <label><input type="checkbox" name="services[]" value="Clubhouses"> Clubhouses</label>
+                                            <label><input type="checkbox" name="services[]" value="Walk ways"> Walk ways</label>
+                                            <label><input type="checkbox" name="services[]" value="Gas station cleaning"> Gas station cleaning</label>
+                                            <label><input type="checkbox" name="services[]" value="Dumpster pad cleaning"> Dumpster pad cleaning</label>
+                                            <label><input type="checkbox" name="services[]" value="Restaurants"> Restaurants</label>
+                                            <label><input type="checkbox" name="services[]" value="Parking lot clean ups"> Parking lot clean ups</label>
+                                            <label><input type="checkbox" name="services[]" value="Window washing"> Window washing</label>
+                                            <label><input type="checkbox" name="services[]" value="HOA's"> HOA's</label>
+                                        </div>
+                                    </div>
 
-                        if (this.value === 'Residential') {
-                        residentialServices.style.display = 'block';
-                        } else if (this.value === 'Commercial') {
-                        commercialServices.style.display = 'block';
-                        }
-                    });
-                </script>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" name="where_you_find" class="minput form-control required" placeholder="How did you hear about us? *" required>
+                                        </div>
+                                    </div>
+
+                                   
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea name="cf_message" class="minput inputmsg form-control required" rows="3" placeholder="Your Message"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12 mt-20">
+                                        <button type="submit" class="btn btn-primary">
+                                            Get Quote!
+                                        </button>
+                                    </div>
+                                </div>            
+                            </form><!-- ./tab-pane -->
+                        </div>
+                </div>
+                <div class="gap"></div>
             </div>
         </div> <!-- ./row -->
     </div> <!-- ./container -->

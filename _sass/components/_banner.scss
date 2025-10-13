@@ -89,7 +89,7 @@
     .quote-title {
         font-size: 22px;
         text-transform: uppercase;
-        text-align: center;
+        // text-align: center;
         margin-bottom: 25px;
     }
     .minput {
@@ -103,6 +103,39 @@
         label {
             padding-right: 10px;
             padding-bottom: 5px;
+        }
+    }
+    .nav-tabs {
+        border: none;
+        .nav-item {
+            margin-right: 10px;
+        }
+        .nav-link {
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+            color: var(--primary);
+            position: relative;
+            transition: all ease 0.3s;
+            &::before {
+                position: absolute;
+                content: "\e91b";
+                color: inherit;
+                font-family: 'uicon';
+                opacity: 0;
+                visibility: hidden;
+                left: 10px;
+                transition: all ease 0.3s;
+            }
+            &.active {
+                background-color: var(--primary);
+                color: var(--white);
+                padding-left: 30px;
+                
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
         }
     }
 }
