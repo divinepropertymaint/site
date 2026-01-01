@@ -49,6 +49,11 @@
             -webkit-transition: all ease 0.4s;
             transition: all ease 0.4s;
         }
+        img {
+            height: 350px;
+            width: 100%;
+            object-fit: cover;
+        }
     }
     .view-btn {
         position: absolute;
