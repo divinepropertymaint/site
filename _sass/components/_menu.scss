@@ -14,10 +14,13 @@
     }
     &-s1 {
         position: sticky;
-        top: 60px;
+        top: 104px;
         z-index: 9;
         background: #fff;
         border-bottom: 1px solid #f1f2eb;
+        @media (min-width: 767px) {
+            top: 60px;
+        }
     }
     &-main {
         padding: 12px 0px;
